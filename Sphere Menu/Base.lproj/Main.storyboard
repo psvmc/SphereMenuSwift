@@ -1,25 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sphere_Menu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGf-Il-vak">
+                                <rect key="frame" x="0.0" y="528" width="320" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcV-9A-yX6">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                        <color key="backgroundColor" red="1" green="0.33173313059999998" blue="0.32155616349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="隐藏">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="hideView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XSB-N1-bKk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2B0-Hx-dEq">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="40"/>
+                                        <color key="backgroundColor" red="0.19250629150000001" green="0.58718936470000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="显示">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jjh-JZ-ibq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="2B0-Hx-dEq" firstAttribute="top" secondItem="PGf-Il-vak" secondAttribute="top" id="3GX-2j-pdS"/>
+                                    <constraint firstAttribute="height" constant="40" id="Nmv-m4-hAp"/>
+                                    <constraint firstItem="hcV-9A-yX6" firstAttribute="width" secondItem="2B0-Hx-dEq" secondAttribute="width" id="QtD-xi-JlD"/>
+                                    <constraint firstItem="hcV-9A-yX6" firstAttribute="top" secondItem="PGf-Il-vak" secondAttribute="top" id="RKu-yd-KLD"/>
+                                    <constraint firstAttribute="trailing" secondItem="2B0-Hx-dEq" secondAttribute="trailing" id="bWX-ov-yir"/>
+                                    <constraint firstItem="hcV-9A-yX6" firstAttribute="leading" secondItem="PGf-Il-vak" secondAttribute="leading" id="dE7-Y3-W5L"/>
+                                    <constraint firstAttribute="bottom" secondItem="hcV-9A-yX6" secondAttribute="bottom" id="goo-JA-Lmn"/>
+                                    <constraint firstAttribute="bottom" secondItem="2B0-Hx-dEq" secondAttribute="bottom" id="iqP-sc-AkA"/>
+                                    <constraint firstItem="2B0-Hx-dEq" firstAttribute="leading" secondItem="hcV-9A-yX6" secondAttribute="trailing" id="nB6-q2-xoY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PGf-Il-vak" secondAttribute="trailing" id="9N9-ym-JM1"/>
+                            <constraint firstItem="PGf-Il-vak" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oKS-OY-4a8"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="PGf-Il-vak" secondAttribute="bottom" id="qlx-Gc-5f2"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="162.66666666666666" y="378.19333333333333"/>
         </scene>
     </scenes>
 </document>

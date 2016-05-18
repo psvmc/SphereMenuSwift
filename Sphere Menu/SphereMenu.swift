@@ -85,6 +85,59 @@ class SphereMenu:UIView, UICollisionBehaviorDelegate{
         }
     }
     
+    
+    /**
+     向下隐藏
+     */
+    func hideViewToBottom(){
+        if let items = self.items{
+            for i in 0..<items.count{
+                items[i].hidden = true;
+            }
+        }
+        self.shrinkSubmenu();
+        let screenHeight:CGFloat! = UIScreen.mainScreen().bounds.height;//屏幕的高度
+        let movespace = screenHeight - self.center.y + 60;
+        
+        
+        UIView.animateWithDuration(0.25, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+            
+            self.transform = CGAffineTransformMakeTranslation(0,movespace);
+            
+        }) { (result) -> Void in
+            
+        }
+        
+    }
+    
+    /**
+     显示
+     */
+    func showView(){
+        
+        UIView.animateWithDuration(0.25, animations: {
+            self.transform = CGAffineTransformIdentity;
+        }) { (result) in
+            
+        }
+        
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(0.25 * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), {
+                if let items = self.items{
+                    for i in 0..<items.count{
+                        items[i].hidden = false;
+                    }
+                }
+        })
+        
+        
+    }
+    
+    
     func commonSetup()
     {
         self.items = Array()
