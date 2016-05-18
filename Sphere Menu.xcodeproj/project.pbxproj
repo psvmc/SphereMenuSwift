@@ -159,6 +159,8 @@
 		F75E0B8619F6B6070033503F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Camilo Morales";
 				TargetAttributes = {
@@ -411,6 +413,7 @@
 				F75E0BAF19F6B6080033503F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F75E0BB019F6B6080033503F /* Build configuration list for PBXNativeTarget "Sphere MenuTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +422,7 @@
 				F75E0BB219F6B6080033503F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
