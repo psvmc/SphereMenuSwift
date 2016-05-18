@@ -136,7 +136,7 @@ class SphereMenu:UIView, UICollisionBehaviorDelegate{
     }
     
     func centerForSphereAtIndex(index:Int) -> CGPoint{
-        let firstAngle:CGFloat = CGFloat(M_PI) + CGFloat(M_PI) + CGFloat(index) * kAngleOffset
+        let firstAngle:CGFloat = CGFloat(M_PI_2)*2 + CGFloat(index) * kAngleOffset
         let startPoint = self.center
         let x = startPoint.x + cos(firstAngle) * kSphereLength;
         let y = startPoint.y + sin(firstAngle) * kSphereLength;

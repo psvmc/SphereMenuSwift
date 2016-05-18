@@ -9,29 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController, SphereMenuDelegate {
-
+    
+    var screenWidth:CGFloat! = UIScreen.mainScreen().bounds.width;//屏幕的宽度
+    var screenHeight:CGFloat! = UIScreen.mainScreen().bounds.height;//屏幕的高度
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.view.backgroundColor = UIColor(red:0.2, green:0.38, blue:0.8, alpha:1)
+        addMenu();
+    }
+    
+    func addMenu() {
         let start = UIImage(named: "start")
-        let image1 = UIImage(named: "icon-twitter")
-        let image2 = UIImage(named: "icon-email")
-        let image3 = UIImage(named: "icon-facebook")
+        let image1 = UIImage(named: "icon_file_menu_folder")
+        let image2 = UIImage(named: "icon_file_menu_img")
+        let image3 = UIImage(named: "icon_file_menu_movie")
         let images:[UIImage] = [image1!,image2!,image3!]
-        let menu = SphereMenu(startPoint: CGPointMake(160, 320), startImage: start!, submenuImages:images, tapToDismiss:true)
+        let menu = SphereMenu(startPoint: CGPointMake(screenWidth-40, screenHeight-100), startImage: start!, submenuImages:images, tapToDismiss:true)
         menu.delegate = self
         self.view.addSubview(menu)
-
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func sphereDidSelected(index: Int) {
