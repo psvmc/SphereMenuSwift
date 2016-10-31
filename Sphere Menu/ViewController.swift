@@ -10,14 +10,14 @@ import UIKit
 
 class ViewController: UIViewController, SphereMenuDelegate {
     
-    var screenWidth:CGFloat! = UIScreen.mainScreen().bounds.width;//屏幕的宽度
-    var screenHeight:CGFloat! = UIScreen.mainScreen().bounds.height;//屏幕的高度
+    var screenWidth:CGFloat! = UIScreen.main.bounds.width;//屏幕的宽度
+    var screenHeight:CGFloat! = UIScreen.main.bounds.height;//屏幕的高度
     var menu:SphereMenu!;
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         addMenu();
     }
@@ -28,7 +28,7 @@ class ViewController: UIViewController, SphereMenuDelegate {
         let image2 = UIImage(named: "icon_file_menu_img")
         let image3 = UIImage(named: "icon_file_menu_movie")
         let images:[UIImage] = [image1!,image2!,image3!]
-        menu = SphereMenu(startPoint: CGPointMake(screenWidth-40, screenHeight-100), startImage: start!, submenuImages:images, tapToDismiss:true)
+        menu = SphereMenu(startPoint: CGPoint(x: screenWidth-40, y: screenHeight-100), startImage: start!, submenuImages:images, tapToDismiss:true)
         menu.delegate = self
         self.view.addSubview(menu)
     }
@@ -37,15 +37,15 @@ class ViewController: UIViewController, SphereMenuDelegate {
         super.didReceiveMemoryWarning()
     }
 
-    func sphereDidSelected(index: Int) {
+    func sphereDidSelected(_ index: Int) {
         print("\(index)")
     }
 
-    @IBAction func hideView(sender: AnyObject) {
+    @IBAction func hideView(_ sender: AnyObject) {
         menu.hideViewToBottom();
     }
     
-    @IBAction func showView(sender: AnyObject) {
+    @IBAction func showView(_ sender: AnyObject) {
         menu.showView();
     }
 }
